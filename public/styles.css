@@ -83,3 +83,19 @@ body::-webkit-scrollbar-thumb {
 .lang-container {
   display: flex;
 }
+
+.code-editor{
+  width: 50%;
+  height: 500px;
+  text-align: left;
+}
+
+#flexer{
+  margin: 20px;
+  padding: 15px;
+  display:flex;
+}
+
+#message{
+  margin-right: 20px;
+}
