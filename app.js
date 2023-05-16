@@ -16,20 +16,45 @@ app.get('/', (req, res) => {
 
 })
 
-app.post('/compile',(req,res)=>{
+app.post('/compile', async (req, res) => {
     const code = req.body.code;
     console.log(code);
+    // try {
+    //     fs.writeFileSync('file.scala', code);
+    //     console.log("File has been saved.");
+    // } catch (error) {
+    //     console.log(error);
+    // }
+    const axios = require('axios');
+
+    const options = {
+        method: 'POST',
+        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
+            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+        },
+        data: {
+            language: 'cpp',
+            version: 'latest',
+            code: code,
+            input: null
+        }
+    };
+
     try {
-        fs.writeFileSync('file.scala', code);
-        console.log("File has been saved.");
+        const response = await axios.request(options);
+        console.log(response.data);
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
+
     res.redirect('/eg');
 
 })
 
-app.get('/eg',(req,res)=>{
+app.get('/eg', (req, res) => {
     res.render('eg.ejs');
 })
 
