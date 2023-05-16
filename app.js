@@ -3,7 +3,8 @@ const fs = require('fs');
 const express = require("express");
 const app = express();
 let lang;
-let code;
+let code="Start Coding here!";
+let output="Your output..";
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -20,15 +21,15 @@ app.get('/', (req, res) => {
 app.post('/compile', async (req, res) => {
     // const code = req.body.code;
     // console.log(req.body);
-    let {c,cpp,dart,csharp,python,rust,scala,golang}=req.body;
-    if(c==='') lang='c';
-    if(cpp==='') lang='cpp';
-    if(dart==='') lang='dart';
-    if(csharp==='') lang='csharp';
-    if(python==='') lang='python3';
-    if(rust==='') lang='rust';
-    if(scala==='') lang='scala';
-    if(golang==='') lang='go';
+    let { c, cpp, dart, csharp, python, rust, scala, golang } = req.body;
+    if (c === '') lang = 'c';
+    if (cpp === '') lang = 'cpp';
+    if (dart === '') lang = 'dart';
+    if (csharp === '') lang = 'csharp';
+    if (python === '') lang = 'python3';
+    if (rust === '') lang = 'rust';
+    if (scala === '') lang = 'scala';
+    if (golang === '') lang = 'go';
     console.log(lang);
     console.log(req.body.code);
     // try {
@@ -38,21 +39,21 @@ app.post('/compile', async (req, res) => {
     //     console.log(error);
     // }
 
-    const options = {
-        method: 'POST',
-        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
-            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
-        },
-        data: {
-            language: lang,
-            version: 'latest',
-            // code: code,
-            input: null
-        }
-    };
+    // const options = {
+    //     method: 'POST',
+    //     url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
+    //         'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+    //     },
+    //     data: {
+    //         language: lang,
+    //         version: 'latest',
+    //         // code: code,
+    //         input: null
+    //     }
+    // };
 
     // try {
     //     const response = await axios.request(options);
@@ -65,16 +66,39 @@ app.post('/compile', async (req, res) => {
 
 })
 
-app.get('/code-editor',(req,res)=>{
-    res.render('code-editor.ejs');
-    
+app.get('/code-editor', (req, res) => {
+    res.render('code-editor.ejs', {code:code, output: output });
     console.log("code = " + code);
 })
 
-app.post('/code-editor',(req,res)=>{
-    code=req.body.code;
+app.post('/code-editor', async(req, res) => {
+    code = req.body.code;
+    const options = {
+        method: 'POST',
+        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
+            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+        },
+        data: {
+            language: 'cpp',
+            version: 'latest',
+            code: code,
+            input: null
+        }
+    };
+
+
+    try {
+        const response = await axios.request(options);
+        console.log(response.data);
+        output=response.data.output;
+    } catch (error) {
+        console.error(error);
+    }
     console.log("code = " + code);
-    res.render('home.ejs');
+    res.redirect('/code-editor');
 })
 
 
