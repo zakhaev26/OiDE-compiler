@@ -99,3 +99,17 @@ body::-webkit-scrollbar-thumb {
 #message{
   margin-right: 20px;
 }
+
+
+.btnhu{
+  width:120px;
+  margin-top: 230px;
+  height:70px;
+}
+
+#compiler-name{
+  text-align: center;
+  font-size: 3em;
+  font-family: 'Shadows Into Light', cursive;
+  color:white;
+}
