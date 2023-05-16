@@ -1,9 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;800&family=Montserrat:wght@800&family=Sacramento&family=Shadows+Into+Light&family=Special+Elite&family=Tilt+Prism&display=swap');
 html{
-    background-color: blue;
-
+    background-color: rgb(47, 47, 51);
+    
+    font-weight: 900;
+    font-size: larger;
 }
 
 input{
     width: 400px;
     height:500px;
 }
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: orange;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid orange;  /* creates padding around scroll thumb */
+  }
+
+  #main_head{
+    text-align: center;
+    font-size: 10em;
+    font-family: 'Shadows Into Light', cursive;
+  }
+
+  #catchy_line{
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Shadows Into Light', cursive;
+  }
+
+  #languages_supported{
+    width: 60%;
+    text-align: center;
+  margin: auto;  }
+
+  .w-60{
+    margin-top: 40px;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .feature-img{
+    text-align: center;
+    margin: 20px;
+    }
