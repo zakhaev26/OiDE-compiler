@@ -1,1 +1,6 @@
-object Hello {     def main(args: Array[String]) = {         println("Hello, world")     } }
+#include <iostream>
+
+int main(){
+cout<<"Hello World"<<endl;
+
+return 0;}

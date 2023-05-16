@@ -1,0 +1,1 @@
+ ; if ($?) { g++ file.cpp -o file } ; if ($?) { .\file }
