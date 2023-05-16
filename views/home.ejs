@@ -1,21 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<%-include('partials/navbar.ejs')-%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 
-<body>
-    <h1>Hi!!</h1>
-    <form action="/compile" method="post">
-        <!-- <input type="text" name="code" placeholder="Enter code"> -->
-        <textarea cols="40" rows="5" name="code"></textarea>
-        <button type="submit">Compile</button>
-    </form>
-</body>
+    <h1 id="main_head">Chaos Cipher</h1>
+    <h2 id="catchy_line">Web based Compiler</h2>
 
-</html>
+<%-include('partials/drawer.ejs')-%>
+
+
+    <div id="languages_supported">
+        <%-include('languages.ejs')-%>
+    </div>
+<br>
+<br>
+<br>
+<br>
+    <div id="features">
+        <%-include('features.ejs')-%>
+        <br>
+        <br>
+        <%-include('features.ejs')-%> 
+        <br>
+<br>
+        <%-include('features.ejs')-%>
+    </div>
+
+
+    <div id="chooselang">
+        <%-include('chooselang.ejs')-%>
+    </div>
+
+    <%-include('partials/footer.ejs')-%>
