@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/compile', async (req, res) => {
-    const code = req.body.code;
-    console.log(code);
+    // const code = req.body.code;
+    console.log(req.body);
     // try {
     //     fs.writeFileSync('file.scala', code);
     //     console.log("File has been saved.");
@@ -27,28 +27,28 @@ app.post('/compile', async (req, res) => {
     // }
     const axios = require('axios');
 
-    const options = {
-        method: 'POST',
-        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
-        headers: {
-            'content-type': 'application/json',
-            'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
-            'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
-        },
-        data: {
-            language: 'cpp',
-            version: 'latest',
-            code: code,
-            input: null
-        }
-    };
+    // const options = {
+    //     method: 'POST',
+    //     url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+    //     headers: {
+    //         'content-type': 'application/json',
+    //         'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
+    //         'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+    //     },
+    //     data: {
+    //         language: 'cpp',
+    //         version: 'latest',
+    //         code: code,
+    //         input: null
+    //     }
+    // };
 
-    try {
-        const response = await axios.request(options);
-        console.log(response.data);
-    } catch (error) {
-        console.error(error);
-    }
+    // try {
+    //     const response = await axios.request(options);
+    //     console.log(response.data);
+    // } catch (error) {
+    //     console.error(error);
+    // }
 
     res.redirect('/eg');
 
