@@ -3,6 +3,7 @@ const fs = require('fs');
 const express = require("express");
 const app = express();
 let lang;
+let code;
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -66,11 +67,16 @@ app.post('/compile', async (req, res) => {
 
 app.get('/code-editor',(req,res)=>{
     res.render('code-editor.ejs');
+    
+    console.log("code = " + code);
 })
 
-app.get('/eg', (req, res) => {
-    res.render('eg.ejs');
+app.post('/code-editor',(req,res)=>{
+    code=req.body.code;
+    console.log("code = " + code);
+    res.render('home.ejs');
 })
+
 
 
 // app.post('/compile',(req,res)=>{
