@@ -2,7 +2,9 @@ const axios = require('axios');
 const fs = require('fs');
 const express = require("express");
 const app = express();
-
+let lang;
+let code="Start Coding here!";
+let output="Your output..";
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -10,23 +12,39 @@ app.set("views", __dirname + '/views');
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-    res.render("home.ejs")
-    console.log("user hit hpg!")
+let f1="The Compiler API is an exceptional tool that brings innovation and convenience to the world of software development. With support for over 40+ programming languages, it enables developers to unleash their creativity and build groundbreaking applications with ease."
+let f2="Imagine being able to compile and run code snippets in various languages seamlessly. From popular programming languages like Python, Java, and C++ to more specialized ones like Rust, Go, and TypeScript, the Compiler API has got you covered. You can experiment, test, and iterate rapidly, all within a single unified interface."
 
+app.get('/', (req, res) => {
+    res.render("home.ejs",{f1:f1,f2:f2})
+    console.log("user hit hpg!")
 })
 
 app.post('/compile', async (req, res) => {
-    const code = req.body.code;
-    console.log(code);
-    // try {
-    //     fs.writeFileSync('file.scala', code);
-    //     console.log("File has been saved.");
-    // } catch (error) {
-    //     console.log(error);
-    // }
-    const axios = require('axios');
+    // const code = req.body.code;
+    // console.log(req.body);
+    let { c, cpp, dart, csharp, python, rust, scala, golang } = req.body;
+    if (c === '') lang = 'c';
+    if (cpp === '') lang = 'cpp';
+    if (dart === '') lang = 'dart';
+    if (csharp === '') lang = 'csharp';
+    if (python === '') lang = 'python3';
+    if (rust === '') lang = 'rust';
+    if (scala === '') lang = 'scala';
+    if (golang === '') lang = 'go';
+    console.log(lang);
+    console.log(req.body.code);
+    res.redirect('/code-editor');
 
+})
+
+app.get('/code-editor', (req, res) => {
+    res.render('code-editor.ejs', {code:code, output: output,lang:lang});
+    console.log("code = " + code);
+})
+
+app.post('/code-editor', async(req, res) => {
+    code = req.body.code;
     const options = {
         method: 'POST',
         url: 'https://online-code-compiler.p.rapidapi.com/v1/',
@@ -36,28 +54,22 @@ app.post('/compile', async (req, res) => {
             'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
         },
         data: {
-            language: 'cpp',
+            language: lang,
             version: 'latest',
             code: code,
             input: null
         }
     };
-
     try {
         const response = await axios.request(options);
         console.log(response.data);
+        output=response.data.output;
     } catch (error) {
         console.error(error);
     }
-
-    res.redirect('/eg');
-
+    console.log("code = " + code);
+    res.redirect('/code-editor');
 })
-
-app.get('/eg', (req, res) => {
-    res.render('eg.ejs');
-})
-
 
 // app.post('/compile',(req,res)=>{
 
