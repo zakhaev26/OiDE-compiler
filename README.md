@@ -30,3 +30,6 @@
 
 # Tech Stack:
 Node.js,Express.js,EJS,REST API's From RapidAPI,TailwindCSS,Flowbite
+
+# Future Work?
+- Creating a good UI , Optimize Speed , Using Shell scripts to run code on VM and se result without APIs
