@@ -89,6 +89,7 @@ body::-webkit-scrollbar-thumb {
   height: 500px;
   text-align: left;
   overflow: scroll;
+  overflow-x: scroll;
 }
 
 #flexer{
