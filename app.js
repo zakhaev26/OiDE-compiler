@@ -5,6 +5,7 @@ const app = express();
 let lang;
 let code = "Start Coding here!";
 let output = "Your output..";
+require('dotenv').config()
 
 let langarr = ['c', 'cpp', 'dart', 'csharp', 'python', 'rust', 'scala', 'golang', 'whitespace', 'verilog', 'vbn', 'yabasic', 'unlambda', 'tcl', 'swift', 'spidermonkey', 'smalltalk', 'scheme', 'ruby', 'rhino', 'racket', 'r', 'prolog', 'pike', 'picolisp', 'php', 'perl', 'pascal', 'octave', 'ocaml', 'objc', 'nodejs', 'nim', 'nemerle', 'nasm', 'mozart', 'lua', 'lolcode', 'kotlin', 'jlang', 'jbang', 'java', 'intercal', 'icon', 'haxe', 'haskell', 'hack', 'groovy', 'gccasm', 'fsharp', 'freebasic', 'fortran', 'forth', 'fasm', 'fantom', 'falcon', 'factor', 'erlang', 'elixir', 'd', 'coffeescript', 'cobol', 'clojure', 'clisp', 'c99', 'brainfuck', 'blockly', 'befunge', 'bc', 'bash', 'awk', 'algol', 'ada'];
 
@@ -42,7 +43,7 @@ app.post('/code-editor', async (req, res) => {
         url: 'https://online-code-compiler.p.rapidapi.com/v1/',
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
+            'X-RapidAPI-Key': process.env.X_RAPID_API_KEY,
             'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
         },
         data: {
