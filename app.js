@@ -63,6 +63,6 @@ app.post('/code-editor', async (req, res) => {
     res.redirect('/code-editor');
 })
 
-app.listen(3000, () => {
-    console.log(`${3000}`)
+app.listen(3000||process.env.PORT, () => {
+    console.log(`${3000} or ${process.env.PORT}`)
 });
