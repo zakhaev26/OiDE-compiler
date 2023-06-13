@@ -49,7 +49,7 @@ app.post('/code-editor', async (req, res) => {
     //first write the code into a file:
     //running basic test case for C: 
 
-    await fs.writeFile("RUNTHISCODEVIABASH.c",code,err=>console.log(err))
+    await fs.writeFile("RUNTHISCODEVIABASH.cpp",code,err=>console.log(err))
 
 
     // to fill output
