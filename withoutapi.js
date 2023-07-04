@@ -13,7 +13,7 @@ const {promisify} = require("util")
 const executeCommand = promisify(exec);
 
 
-let langarr = ['c', 'cpp', 'dart', 'csharp', 'python', 'rust', 'scala', 'golang', 'whitespace', 'verilog', 'vbn', 'yabasic', 'unlambda', 'tcl', 'swift', 'spidermonkey', 'smalltalk', 'scheme', 'ruby', 'rhino', 'racket', 'r', 'prolog', 'pike', 'picolisp', 'php', 'perl', 'pascal', 'octave', 'ocaml', 'objc', 'nodejs', 'nim', 'nemerle', 'nasm', 'mozart', 'lua', 'lolcode', 'kotlin', 'jlang', 'jbang', 'java', 'intercal', 'icon', 'haxe', 'haskell', 'hack', 'groovy', 'gccasm', 'fsharp', 'freebasic', 'fortran', 'forth', 'fasm', 'fantom', 'falcon', 'factor', 'erlang', 'elixir', 'd', 'coffeescript', 'cobol', 'clojure', 'clisp', 'c99', 'brainfuck', 'blockly', 'befunge', 'bc', 'bash', 'awk', 'algol', 'ada'];
+let langarr = ['c', 'cpp', 'dart', 'csharp', 'py', 'rust', 'scala', 'golang', 'whitespace', 'verilog', 'vbn', 'yabasic', 'unlambda', 'tcl', 'swift', 'spidermonkey', 'smalltalk', 'scheme', 'ruby', 'rhino', 'racket', 'r', 'prolog', 'pike', 'picolisp', 'php', 'perl', 'pascal', 'octave', 'ocaml', 'objc', 'nodejs', 'nim', 'nemerle', 'nasm', 'mozart', 'lua', 'lolcode', 'kotlin', 'jlang', 'jbang', 'java', 'intercal', 'icon', 'haxe', 'haskell', 'hack', 'groovy', 'gccasm', 'fsharp', 'freebasic', 'fortran', 'forth', 'fasm', 'fantom', 'falcon', 'factor', 'erlang', 'elixir', 'd', 'coffeescript', 'cobol', 'clojure', 'clisp', 'c99', 'brainfuck', 'blockly', 'befunge', 'bc', 'bash', 'awk', 'algol', 'ada'];
 
 const bodyParser = require('body-parser');
 const { Console } = require('console');
@@ -49,16 +49,19 @@ app.post('/code-editor', async (req, res) => {
     //first write the code into a file:
     //running basic test case for C: 
 
-    await fs.writeFile("RUNTHISCODEVIABASH.cpp",code,err=>console.log(err))
+    await fs.writeFile(`RUNTHISCODEVIABASH.${lang}`,code,err=>console.log(err))
 
 
     // to fill output
-    output = (await executeCommand('sh compile.sh')).stdout;
+    output = (await executeCommand(`sh compile${lang}.sh`)).stdout;
     console.log(output.stdout)/* { stdout: 'Hello Gon', stderr: '' }   */
     console.log("code = " + code);
+
+    executeCommand(`sh cleaner.sh`);
     res.redirect('/code-editor');
 })
 
 app.listen(3000||process.env.PORT, () => {
     console.log(`${3000} or ${process.env.PORT}`)
 });
+

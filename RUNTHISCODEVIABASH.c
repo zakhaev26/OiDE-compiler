@@ -1,10 +1,10 @@
 #include<stdio.h>
 
-
 int main(){
 
-printf("%d",2+3);
-
+for(int i=0;i<=80;i++){
+printf("hoi");
+}
 
 return 0;
 }
