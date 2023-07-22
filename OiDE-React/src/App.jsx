@@ -3,6 +3,7 @@ import axios from 'axios'
 import Navbar from './components/Navbar';
 import Icon from './components/Icon';
 import SidebarAndHeader from './components/Sidebar';
+import HeroText from './components/HeroText';
 function App() {
 
   const compileCode = async (e) => {
@@ -24,8 +25,9 @@ function App() {
 
 return (
   <>
-<SidebarAndHeader/>
-
+<SidebarAndHeader>
+<HeroText/>
+</SidebarAndHeader>
   {/* </div> */}
     {/* <center>
       <textarea value={code} onChange={(e) => { setCode(e.target.value); }} name="code" cols="30" rows="10" placeholder='Write Code Here' />
