@@ -1,15 +1,9 @@
 import { useState } from 'react'
 import axios from 'axios'
+import Navbar from './components/Navbar';
+import Icon from './components/Icon';
+import SidebarAndHeader from './components/Sidebar';
 function App() {
-
-  const [num, setNum] = useState(0)
-  const [code, setCode] = useState('')
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setNum(num + 1)
-
-  }
 
   const compileCode = async (e) => {
 
@@ -27,16 +21,16 @@ function App() {
     console.log('Arr Pop  : ' + ans);
   }
 
-  export default API
-
-}
 
 return (
   <>
-    <center>
+<SidebarAndHeader/>
+
+  {/* </div> */}
+    {/* <center>
       <textarea value={code} onChange={(e) => { setCode(e.target.value); }} name="code" cols="30" rows="10" placeholder='Write Code Here' />
       <button type='submit' onClick={compileCode}>Compile</button>
-    </center>
+    </center> */}
   </>
 )
 }
