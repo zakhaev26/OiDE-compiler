@@ -6,6 +6,7 @@ import SidebarAndHeader from './components/Sidebar';
 import HeroText from './components/HeroText';
 import Features from './components/Features';
 import Languages from './components/Languages';
+import Footer from "./components/Footer"
 function App() {
 
   const compileCode = async (e) => {
@@ -31,7 +32,9 @@ return (
 <HeroText/>
 <Features/>
 <Languages/>
+<Footer/>
 </SidebarAndHeader>
+
   {/* </div> */}
     {/* <center>
       <textarea value={code} onChange={(e) => { setCode(e.target.value); }} name="code" cols="30" rows="10" placeholder='Write Code Here' />

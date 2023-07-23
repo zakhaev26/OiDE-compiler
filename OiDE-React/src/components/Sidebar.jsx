@@ -31,14 +31,10 @@ import {
   FiChevronDown,
 } from 'react-icons/fi';
 
-const LinkItems=[
-  { name: 'Java', icon:null},
-  { name: 'C', icon: null },
-  { name: 'C++', icon: null},
-  { name: 'Python', icon:null},
-  { name: 'Scala', icon:null},
-];
+import lang from '../hotlang.map';
 
+
+const LinkItems=lang.language
 export default function SidebarAndHeader({
   children,
 }) {
@@ -88,9 +84,12 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
+      <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+         &nbsp; Hot Languages!
+        </Text>
+      {LinkItems.map((lang) => (
+        <NavItem key={lang}>
+          {lang}
         </NavItem>
       ))}
     </Box>
