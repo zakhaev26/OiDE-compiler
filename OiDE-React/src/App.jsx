@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Icon from './components/Icon';
 import SidebarAndHeader from './components/Sidebar';
 import HeroText from './components/HeroText';
+import Features from './components/Features';
 function App() {
 
   const compileCode = async (e) => {
@@ -27,6 +28,7 @@ return (
   <>
 <SidebarAndHeader>
 <HeroText/>
+<Features/>
 </SidebarAndHeader>
   {/* </div> */}
     {/* <center>

@@ -1,10 +1,12 @@
 import React from 'react'
+import "../assets/HeroText.css"
 
 const HeroText = () => {
   return (
     <div>
         <center>
-            <h1 style={{color:'#000',fontFamily:'Arial',fontSize:'5rem'}}>Online IDE</h1>
+            <h1>Online IDE</h1>
+            <h3>OiDE - Empowering Developers, Unleashing Creativity</h3>
         </center>
     </div>
   )
