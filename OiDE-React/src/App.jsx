@@ -5,6 +5,7 @@ import Icon from './components/Icon';
 import SidebarAndHeader from './components/Sidebar';
 import HeroText from './components/HeroText';
 import Features from './components/Features';
+import Languages from './components/Languages';
 function App() {
 
   const compileCode = async (e) => {
@@ -29,6 +30,7 @@ return (
 <SidebarAndHeader>
 <HeroText/>
 <Features/>
+<Languages/>
 </SidebarAndHeader>
   {/* </div> */}
     {/* <center>
