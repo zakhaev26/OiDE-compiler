@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import axios from 'axios'
-import Navbar from './components/Navbar';
 import Icon from './components/Icon';
 import SidebarAndHeader from './components/Sidebar';
 import HeroText from './components/HeroText';

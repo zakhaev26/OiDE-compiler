@@ -10,6 +10,7 @@ import {
   } from '@chakra-ui/react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { ReactNode } from 'react';
+import { color } from 'framer-motion';
   
   const Logo = (props) => {
     return (
@@ -70,7 +71,7 @@ import {
           justify={'center'}
           align={'center'}>
           {/* <Logo /> */}
-          ,<Text>OiDE</Text>
+          ,<Text style={{color:'red'}}>OiDE</Text>
           <Stack direction={'row'} spacing={6}>
             <Link href={'#'}>Home</Link>
             <Link href={'#'}>About</Link>

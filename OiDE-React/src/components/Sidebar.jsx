@@ -88,8 +88,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
          &nbsp; Hot Languages!
         </Text>
       {LinkItems.map((lang) => (
-        <NavItem key={lang}>
+        <NavItem onClick={()=>{console.log(lang)}} key={lang}>
           {lang}
+          {/* Send Post request */}
         </NavItem>
       ))}
     </Box>

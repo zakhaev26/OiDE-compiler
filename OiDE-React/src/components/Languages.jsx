@@ -3,8 +3,10 @@ import { Card, CardHeader, CardBody, CardFooter, Heading, Button, Text, SimpleGr
 import "../assets/Languages.css"
 import lang from "../lang.map.js"
 
+
 const Languages = () => {
   // console.log(lang.language)
+
   return (
     <>
       <div id='lang-sup'>
@@ -14,7 +16,7 @@ const Languages = () => {
       <div>
         <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(200px, 1fr))'>
           {
-            lang.language.map((language,i) => {return <LangCard id={i} lang={language[0].toUpperCase() + language.slice(1,language.length)} /> })
+            lang.language.map((language, i) => { return <LangCard id={i} lang={language[0].toUpperCase() + language.slice(1, language.length)} /> })
           }
         </SimpleGrid>
       </div>
@@ -22,15 +24,22 @@ const Languages = () => {
   )
 }
 
-const LangCard = ({ lang ,id}) => {
-  return (<Card key={id}>
+const LangCard = ({ lang, i }) => {
+
+  const handleClick = (e) => {
+    console.log(lang)
+  }
+
+  return (
+  <Card key={i} >
     <CardHeader>
       <Heading size='sm'>{lang}</Heading>
     </CardHeader>
     <CardFooter>
-      <Button>View here</Button>
+      <Button onClick={handleClick}>View here</Button>
     </CardFooter>
-  </Card>)
+  </Card>
+  )
 }
 
 export default Languages
