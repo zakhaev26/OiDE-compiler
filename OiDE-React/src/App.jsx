@@ -6,6 +6,8 @@ import HeroText from './components/HeroText';
 import Features from './components/Features';
 import Languages from './components/Languages';
 import Footer from "./components/Footer"
+import Codespaces from './components/Codespaces';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
 
   const compileCode = async (e) => {
@@ -14,7 +16,7 @@ function App() {
     const API_URL = 'http://localhost:5000';
     const Arr = [];
     try {
-      const result = await axios.post(`${API_URL}/api`,code);
+      const result = await axios.post(`${API_URL}/api`, code);
       Arr.push(result.data);
     }
     catch (e) {
@@ -25,22 +27,26 @@ function App() {
   }
 
 
-return (
-  <>
-<SidebarAndHeader>
-<HeroText/>
-<Features/>
-<Languages/>
-<Footer/>
-</SidebarAndHeader>
-
-  {/* </div> */}
-    {/* <center>
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' exact element={<SidebarAndHeader>
+            <HeroText />
+            <Features />
+            <Languages />
+            <Footer />
+          </SidebarAndHeader>} />
+            <Route path="/code/:lang" element={<Codespaces/>} />
+          <Route path='*' element={<h1>Error 404</h1>}></Route>
+        </Routes>
+      </BrowserRouter>
+      {/* <center>
       <textarea value={code} onChange={(e) => { setCode(e.target.value); }} name="code" cols="30" rows="10" placeholder='Write Code Here' />
       <button type='submit' onClick={compileCode}>Compile</button>
     </center> */}
-  </>
-)
+    </>
+  )
 }
 
 export default App

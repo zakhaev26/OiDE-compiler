@@ -2,15 +2,16 @@ import React from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Heading, Button, Text, SimpleGrid } from '@chakra-ui/react'
 import "../assets/Languages.css"
 import lang from "../lang.map.js"
-
-
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const Languages = () => {
-  // console.log(lang.language)
+  console.log(lang.language)
 
   return (
     <>
       <div id='lang-sup'>
-        <h1>Languages Supported</h1>
+        <h1 id='hero-lang'>Languages Supported</h1>
       </div>
 
       <div>
@@ -26,19 +27,17 @@ const Languages = () => {
 
 const LangCard = ({ lang, i }) => {
 
-  const handleClick = (e) => {
-    console.log(lang)
-  }
-
   return (
-  <Card key={i} >
-    <CardHeader>
-      <Heading size='sm'>{lang}</Heading>
-    </CardHeader>
-    <CardFooter>
-      <Button onClick={handleClick}>View here</Button>
-    </CardFooter>
-  </Card>
+    <Card key={i} >
+      <CardHeader>
+        <Heading size='sm'>{lang}</Heading>
+      </CardHeader>
+      <CardFooter>
+      <Link to={`/code/${lang}`}>
+        <Button >Code in {lang} !</Button>
+      </Link>
+      </CardFooter>
+    </Card>
   )
 }
 
