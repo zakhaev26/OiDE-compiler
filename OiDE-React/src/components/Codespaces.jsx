@@ -21,6 +21,7 @@ const Codespaces = () => {
                     code: value,
                     language:lang[0].toLowerCase() + lang.slice(1,lang.length)
                 })
+                console.log(data + "data from fetchData")
                 return data
             }
             catch (e) {
@@ -33,7 +34,6 @@ const Codespaces = () => {
         if (buttonClick === true) {
             console.log('Compiling..')
             fetchData().then((res) => {
-                console.log(res.data)
                 setOUTPUT__INJECTION__FROM__NODEJS(res.data.output)
             }).catch(e => {
                 console.log(e.message)
