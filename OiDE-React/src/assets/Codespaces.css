@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Manrope:wght@500&family=Poppins:wght@600&family=Victor+Mono&display=swap');
+h1{
+    font-family: 'Victor Mono', monospace;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+#gon{
+    background-color: #dbaecf;
+}
+
+#textarea{
+    background-color: rgb(203, 193, 183);
+    font-family: 'Victor Mono', monospace;
+    color: black;
+}

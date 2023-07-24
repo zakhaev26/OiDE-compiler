@@ -32,9 +32,9 @@ const LangCard = ({ lang, i }) => {
       <CardHeader>
         <Heading size='sm'>{lang}</Heading>
       </CardHeader>
-      <CardFooter>
+      <CardFooter style={{backgroundColor:'azure'}}>
       <Link to={`/code/${lang}`}>
-        <Button >Code in {lang} !</Button>
+        <Button  >Code in {lang} !</Button>
       </Link>
       </CardFooter>
     </Card>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Container, Textarea, Text, SimpleGrid, Box, Button } from '@chakra-ui/react'
 import axios from 'axios';
-
+import "../assets/Codespaces.css"
 const Codespaces = () => {
     const { lang } = useParams();
     let [value, setValue] = React.useState('')
@@ -61,6 +61,9 @@ const Codespaces = () => {
                         width='90%'
                         height='80%'
                         value={value}
+                        id='textarea'
+                        errorBorderColor='none'
+                        autoCorrect='false'
                     ></Textarea>
                     <Button style={{ marginLeft: '77%', marginTop: '10px' }} onClick={() => { setbuttonClick((prevState) => !prevState) }} isDisabled={buttonClick}>Compile</Button>
 
@@ -72,6 +75,8 @@ const Codespaces = () => {
                         size='lg'
                         width='90%'
                         height='80%'
+                        id='textarea'
+                        className='textarea'
                         value={OUTPUT__INJECTION__FROM__NODEJS}
                     />
 

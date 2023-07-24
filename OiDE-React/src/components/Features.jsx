@@ -1,133 +1,107 @@
-import { ReactNode } from 'react';
-import {
-  Stack,
-  Container,
-  Box,
-  Flex,
-  Text,
-  Heading,
-  SimpleGrid,
-} from '@chakra-ui/react';
+'use client'
 import "../assets/Features.css"
-export default function Features() {
-  return (
-    <div id ='feature__box'>
-    <Box bg={'white.800'} position={'relative'}>
-      <Flex
-        flex={1}
-        zIndex={0}
-        display={{ base: 'none', lg: 'flex' }}
-        backgroundImage="url('/templates/stats-grid-with-image.png')"
-        backgroundSize={'cover'}
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        position={'absolute'}
-        width={'50%'}
-        insetY={0}
-        right={0}>
-        <Flex
-          bgGradient={'linear(to-r, white.800 10%, transparent)'}
-          w={'full'}
-          h={'full'}
-        />
-      </Flex>
-      <Container maxW={'7xl'} zIndex={10} position={'relative'}>
-        <Stack direction={{ base: 'column', lg: 'row' }}>
-          <Stack
-            flex={1}
-            color={'white.400'}
-            justify={{ lg: 'center' }}
-            py={{ base: 4, md: 20, xl: 60 }}>
-            <Box mb={{ base: 8, md: 20 }}>
-              <Text
-                fontFamily={'heading'}
-                fontWeight={700}
-                textTransform={'uppercase'}
-                mb={3}
-                fontSize={'xl'}
-                color={'white.500'}>
-                Technology
-              </Text>
-              <Heading
-                color={'white'}
-                mb={5}
-                fontSize={{ base: '3xl', md: '5xl' }}>
-                21st century agriculture
-              </Heading>
-              <Text fontSize={'xl'} color={'white.400'}>
-                The NewLife™ technology allows you to monitor your crops and get
-                complete insights at real time. The proprietary
-                software/hardware ecosystem prevents your plants from getting
-                neglected.
-              </Text>
-            </Box>
 
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-              {stats.map((stat) => (
-                <Box key={stat.title}>
-                  <Text
-                    fontFamily={'heading'}
-                    fontSize={'3xl'}
-                    color={'white'}
-                    mb={3}>
-                    {stat.title}
-                  </Text>
-                  <Text fontSize={'xl'} color={'white.400'}>
-                    {stat.content}
-                  </Text>
-                </Box>
-              ))}
-            </SimpleGrid>
-          </Stack>
-          <Flex flex={1} />
-        </Stack>
-      </Container>
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  Icon,
+  Stack,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react'
+import { ReactElement } from 'react'
+import {
+  FcAbout,
+  FcAssistant,
+  FcCollaboration,
+  FcDonate,
+  FcManager,
+} from 'react-icons/fc'
+
+
+const Card = ({ heading, description, icon, href }) => {
+  return (
+    <Box
+      maxW={{ base: 'full', md: '275px' }}
+      w={'full'}
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      p={5}>
+      <Stack align={'start'} spacing={2}>
+        <Flex
+          w={16}
+          h={16}
+          align={'center'}
+          justify={'center'}
+          color={'white'}
+          rounded={'full'}
+          bg={useColorModeValue('gray.100', 'gray.700')}>
+          {icon}
+        </Flex>
+        <Box mt={2}>
+          <Heading size="md">{heading}</Heading>
+          <Text mt={1} fontSize={'sm'}>
+            {description}
+          </Text>
+        </Box>
+        <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
+          Learn more
+        </Button>
+      </Stack>
     </Box>
-    </div>
-  );
+  )
 }
 
-const StatsText = ({ children }) => (
-  <Text as={'span'} fontWeight={700} color={'white'}>
-    {children}
-  </Text>
-);
+export default function gridListWith() {
+  return (
+    <Box p={4}>
+      <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>
+        <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
+        </Heading>
+        <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis obcaecati ut
+          cupiditate pariatur, dignissimos, placeat amet officiis.
+        </Text>
+      </Stack>
 
-const stats = [
-  {
-    title: '10+',
-    content: (
-      <>
-        <StatsText>Software modules</StatsText> for detailed monitoring and
-        real-time analytics
-      </>
-    ),
-  },
-  {
-    title: '24/7',
-    content: (
-      <>
-        <StatsText>Analytics</StatsText> enabled right in your dashboard without
-        history limitations
-      </>
-    ),
-  },
-  {
-    title: '13%',
-    content: (
-      <>
-        <StatsText>Farms</StatsText> in North America has chosen NewLife™ as
-        their management solution
-      </>
-    ),
-  },
-  {
-    title: '250M+',
-    content: (
-      <>
-        <StatsText>Plants</StatsText> currently connected and monitored by the
-        NewLife™ software
-      </>
-    ),
-  },
-];
+      <Container maxW={'5xl'} mt={12}>
+        <Flex flexWrap="wrap" gridGap={6} justify="center">
+          <Card
+            heading={'Heading'}
+            icon={<Icon as={FcAssistant} w={10} h={10} />}
+            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            href={'#'}
+          />
+          <Card
+            heading={'Heading'}
+            icon={<Icon as={FcCollaboration} w={10} h={10} />}
+            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            href={'#'}
+          />
+          <Card
+            heading={'Heading'}
+            icon={<Icon as={FcDonate} w={10} h={10} />}
+            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            href={'#'}
+          />
+          <Card
+            heading={'Heading'}
+            icon={<Icon as={FcManager} w={10} h={10} />}
+            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            href={'#'}
+          />
+          <Card
+            heading={'Heading'}
+            icon={<Icon as={FcAbout} w={10} h={10} />}
+            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            href={'#'}
+          />
+        </Flex>
+      </Container>
+    </Box>
+  )
+}

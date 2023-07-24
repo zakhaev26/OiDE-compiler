@@ -10,21 +10,21 @@ import Codespaces from './components/Codespaces';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 function App() {
 
-  const compileCode = async (e) => {
+  // const compileCode = async (e) => {
 
-    e.preventDefault();
-    const API_URL = 'http://localhost:5000';
-    const Arr = [];
-    try {
-      const result = await axios.post(`${API_URL}/api`, code);
-      Arr.push(result.data);
-    }
-    catch (e) {
-      console.log(e.message)
-    }
-    ans = Arr.pop();
-    console.log('Arr Pop  : ' + ans);
-  }
+  //   e.preventDefault();
+  //   const API_URL = 'http://localhost:5000';
+  //   const Arr = [];
+  //   try {
+  //     const result = await axios.post(`${API_URL}/api`, code);
+  //     Arr.push(result.data);
+  //   }
+  //   catch (e) {
+  //     console.log(e.message)
+  //   }
+  //   ans = Arr.pop();
+  //   console.log('Arr Pop  : ' + ans);
+  // }
 
 
   return (
@@ -37,7 +37,7 @@ function App() {
             <Languages />
             <Footer />
           </SidebarAndHeader>} />
-            <Route path="/code/:lang" element={<Codespaces/>} />
+            <Route path="/code/:lang" element={<><Codespaces/><Footer/></>} />
           <Route path='*' element={<h1>Error 404</h1>}></Route>
         </Routes>
       </BrowserRouter>
