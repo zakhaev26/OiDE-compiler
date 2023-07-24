@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Container, Textarea, Text, SimpleGrid, Box, Button } from '@chakra-ui/react'
 import axios from 'axios';
+
 const Codespaces = () => {
     const { lang } = useParams();
     let [value, setValue] = React.useState('')
@@ -17,7 +18,8 @@ const Codespaces = () => {
         const fetchData = async () => {
             try {
                 const data = await axios.post('http://127.0.0.1:5000/api', {
-                    code: value
+                    code: value,
+                    language:lang[0].toLowerCase() + lang.slice(1,lang.length)
                 })
                 return data
             }

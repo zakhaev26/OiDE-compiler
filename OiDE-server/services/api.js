@@ -1,18 +1,18 @@
 const axios = require('axios');
 async function api (req,res){
-    console.log(req.body);
-    const {code} = req.body;
-    // res.send(`Posted ${code}`)
+    // console.log(req.body);
+    const {code,language} = req.body;
+    // console.log(language)
     const options = {
         method: 'POST',
-        url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+        url: process.env.API_URL,
         headers: {
           'content-type': 'application/json',
-          'X-RapidAPI-Key': '95992756cbmshdd903a59b07377ap1b3e73jsn36c4b8682a30',
-          'X-RapidAPI-Host': 'online-code-compiler.p.rapidapi.com'
+          'X-RapidAPI-Key': process.env.X_RAPID_API_KEY,
+          'X-RapidAPI-Host':process.env.X_RAPID_API_HOST, 
         },
         data: {
-          language: 'python3',
+          language: language,
           version: 'latest',
           code: code,
           input: null

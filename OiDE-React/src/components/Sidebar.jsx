@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+
 import {
   IconButton,
   Avatar,
@@ -9,7 +11,6 @@ import {
   VStack,
   Icon,
   useColorModeValue,
-  Link,
   Drawer,
   DrawerContent,
   Text,
@@ -19,6 +20,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Button,
 } from '@chakra-ui/react';
 import {
   FiHome,
@@ -33,8 +35,7 @@ import {
 
 import lang from '../hotlang.map';
 
-
-const LinkItems=lang.language
+const LinkItems = lang.language
 export default function SidebarAndHeader({
   children,
 }) {
@@ -85,12 +86,12 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-         &nbsp; Hot Languages!
-        </Text>
+        &nbsp; Hot Languages!
+      </Text>
       {LinkItems.map((lang) => (
-        <NavItem onClick={()=>{console.log(lang)}} key={lang}>
-          {lang}
-          {/* Send Post request */}
+
+        <NavItem key={lang}>
+          <Link to={`/code/${lang}`}>{lang}</Link>
         </NavItem>
       ))}
     </Box>
@@ -183,7 +184,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   ml="2">
                   <Text fontSize="sm">User</Text>
                   <Text fontSize="xs" color="gray.600">
-                  {new Date().getDate().toLocaleString()}/{new Date().getMonth().toLocaleString()}/{new Date().getFullYear().toLocaleString()}
+                    {new Date().getDate().toLocaleString()}/{new Date().getMonth().toLocaleString()}/{new Date().getFullYear().toLocaleString()}
                   </Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
