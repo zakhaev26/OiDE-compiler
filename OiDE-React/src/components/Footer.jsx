@@ -9,9 +9,8 @@ import {
     VisuallyHidden,
   } from '@chakra-ui/react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
-  import { ReactNode } from 'react';
-import { color } from 'framer-motion';
-  
+
+  import "../assets/Footer.css"
   const Logo = (props) => {
     return (
       <svg
@@ -71,12 +70,12 @@ import { color } from 'framer-motion';
           justify={'center'}
           align={'center'}>
           {/* <Logo /> */}
-          ,<Text style={{color:'red'}}>OiDE</Text>
+          ,<Text id='footer__hero'>OiDE</Text>
           <Stack direction={'row'} spacing={6}>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>About</Link>
-            <Link href={'#'}>Blog</Link>
-            <Link href={'#'}>Contact</Link>
+            <Link id='footer__utils' href={'#'}>Home</Link>
+            <Link id='footer__utils' href={'#'}>About</Link>
+            <Link id='footer__utils' href={'#'}>Blog</Link>
+            <Link id='footer__utils' href={'#'}>Contact</Link>
           </Stack>
         </Container>
   
@@ -92,7 +91,7 @@ import { color } from 'framer-motion';
             spacing={4}
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}>
-            <Text>© 2023 Soubhik Gon. All rights reserved</Text>
+            <Text id='footer__utils'>© 2023 Soubhik Gon. All rights reserved</Text>
             <Stack direction={'row'} spacing={6}>
               <SocialButton label={'Twitter'} href={'#'}>
                 <FaTwitter />

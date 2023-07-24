@@ -63,8 +63,7 @@ export default function gridListWith() {
         <Heading fontSize={{ base: '2xl', sm: '4xl' }} fontWeight={'bold'}>
         </Heading>
         <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis obcaecati ut
-          cupiditate pariatur, dignissimos, placeat amet officiis.
+        <h4>Experience the convenience of coding anytime, anywhere</h4>
         </Text>
       </Stack>
 

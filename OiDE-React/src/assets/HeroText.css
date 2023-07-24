@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Manrope:wght@500&family=Poppins:wght@600&display=swap');
 
-h1{
+#herotext{
     font-family: 'Manrope', cursive;
-    font-size: 5rem;
+    font-size: 7rem;
+    background-image: linear-gradient(45deg, #f60909, #dcdce2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
 }
 
 h3{

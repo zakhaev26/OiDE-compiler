@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-
+import "../assets/Sidebar.css"
 import {
   IconButton,
   Avatar,
@@ -195,11 +195,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
             <MenuList
               bg={useColorModeValue('white', 'gray.900')}
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
-              <MenuItem>What Is OiDE</MenuItem>
-              <MenuItem>Languages Offered</MenuItem>
-              <MenuItem>Tech Stack Used</MenuItem>
-              <MenuDivider />
-              <MenuItem>Open Sourced @ Github!</MenuItem>
+              <MenuItem id='prof__utils' onClick={()=>{alert(`Link : ` + 'https://github.com/mogulcoder26/OiDE-compiler')}}>Open Sourced @ Github!</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

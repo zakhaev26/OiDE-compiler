@@ -46,18 +46,14 @@ app.get('/code-editor', (req, res) => {
 app.post('/code-editor', async (req, res) => {
     code = req.body.code;
 
-    //first write the code into a file:
-    //running basic test case for C: 
-
+    //writing the code in a temp file
     await fs.writeFile(`RUNTHISCODEVIABASH.${lang}`,code,err=>console.log(err))
 
-
-    // to fill output
+    // to execute script and assigning to output
     output = (await executeCommand(`sh compile${lang}.sh`)).stdout;
-    console.log(output.stdout)/* { stdout: 'Hello Gon', stderr: '' }   */
+    console.log(output.stdout)
     console.log("code = " + code);
-
-    executeCommand(`sh cleaner.sh`);
+    // executeCommand(`sh cleaner.sh`);
     res.redirect('/code-editor');
 })
 

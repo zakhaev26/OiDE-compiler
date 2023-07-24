@@ -1,3 +1,8 @@
+// const fs = require('fs')
+// const  { exec } = require( "child_process");
+// const {promisify} = require("util")
+// const executeCommand = promisify(exec);
+
 const axios = require('axios');
 async function api (req,res){
     console.log(req.body);
