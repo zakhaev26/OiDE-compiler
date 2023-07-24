@@ -59,6 +59,9 @@ import {
   
   export default function SmallCentered() {
     return (
+      <>
+      <br />
+      <br />
       <Box
         bg={useColorModeValue('gray.50', 'gray.900')}
         color={useColorModeValue('gray.700', 'gray.200')}>
@@ -72,10 +75,8 @@ import {
           {/* <Logo /> */}
           ,<Text id='footer__hero'>OiDE</Text>
           <Stack direction={'row'} spacing={6}>
-            <Link id='footer__utils' href={'#'}>Home</Link>
-            <Link id='footer__utils' href={'#'}>About</Link>
-            <Link id='footer__utils' href={'#'}>Blog</Link>
-            <Link id='footer__utils' href={'#'}>Contact</Link>
+            <Link id='footer__utils' href={'https://github.com/mogulcoder26/OiDE-compiler'}>Github</Link>
+            <Link id='footer__utils' href={'https://www.linkedin.com/in/soubhikgon/'}>LinkedIn</Link>
           </Stack>
         </Container>
   
@@ -93,18 +94,13 @@ import {
             align={{ base: 'center', md: 'center' }}>
             <Text id='footer__utils'>© 2023 Soubhik Gon. All rights reserved</Text>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Twitter'} href={'#'}>
-                <FaTwitter />
-              </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube />
-              </SocialButton>
-              <SocialButton label={'Instagram'} href={'#'}>
+              <SocialButton label={'Instagram'} href={'https://www.instagram.com/soubhikgon_/'}>
                 <FaInstagram />
               </SocialButton>
             </Stack>
           </Container>
         </Box>
       </Box>
+      </>
     );
   }

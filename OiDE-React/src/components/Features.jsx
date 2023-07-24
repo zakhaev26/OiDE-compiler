@@ -94,11 +94,11 @@ export default function gridListWith() {
           <Card
             heading={'UI'}
             icon={<ViewQuiltIcon  style={{color:'purple'}}/>}
-            description={`Code on-the-go with our platform's responsive design.`}
+            description={`Code on-the-go with OiDE's responsive design.`}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
+            heading={'Android and Web Support'}
             icon={<AndroidIcon  style={{color:'green'}}/>}
             description={`Available in Android App and Web Version`}
             href={'#'}

@@ -85,7 +85,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
+      <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold" id='hotlang'>
         &nbsp; Hot Languages!
       </Text>
       {LinkItems.map((lang) => (
@@ -100,7 +100,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
 const NavItem = ({ icon, children, ...rest }) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }} id='sidebar__lang'>
       <Flex
         align="center"
         p="4"

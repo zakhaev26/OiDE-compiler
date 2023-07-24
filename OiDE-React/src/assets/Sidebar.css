@@ -1,2 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Manrope:wght@500&family=Poppins:wght@600&display=swap');
 
+#sidebar__lang{
+    font-family: Poppins,sans-serif;
+    color: rgb(82, 82, 75);
+}
+
+#hotlang{
+    color: red;
+}

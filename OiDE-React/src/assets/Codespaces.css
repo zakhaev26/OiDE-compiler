@@ -3,21 +3,31 @@ h1{
     font-family: 'Poppins', monospace;
     font-size: 3rem;
     margin-bottom: 3rem;
-}
-
-#gon{
-    background-color: #dbaecf;
-}
-
-#textarea{
-    background-color: rgb(208, 186, 163);
-    font-family: 'Victor Mono', monospace;
-    color: black;
-}
-
-.gradient-text {
-    background-image: linear-gradient(45deg, #1d1c1d, #a4a4ab);
+    font-family: 'Manrope', cursive;
+    font-size: 7rem;
+    background-image: linear-gradient(45deg, #f60909, #dcdce2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
 }
+
+#gon{
+    background-color: rgb(58, 57, 57);
+}
+
+#textarea{
+    background-color: rgb(190, 188, 186);
+    font-family: 'Victor Mono', monospace;
+    color: black;
+}
+#textarea:hover{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+/* .gradient-text {
+    background-image: linear-gradient(45deg, #1d1c1c, #a4a4ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+} */

@@ -34,9 +34,13 @@ const Codespaces = () => {
         if (buttonClick === true) {
             console.log('Compiling..')
             fetchData().then((res) => {
-                setOUTPUT__INJECTION__FROM__NODEJS(res.data.output)
+                res.data.output?
+                setOUTPUT__INJECTION__FROM__NODEJS(res.data.output):
+                setOUTPUT__INJECTION__FROM__NODEJS(res)
+
             }).catch(e => {
                 console.log(e.message)
+                setOUTPUT__INJECTION__FROM__NODEJS(e.message)
             }).finally(() => {
                 setbuttonClick(false)
             })
@@ -65,7 +69,7 @@ const Codespaces = () => {
                         errorBorderColor='none'
                         autoCorrect='false'
                     ></Textarea>
-                    <Button style={{ marginLeft: '77%', marginTop: '10px' }} onClick={() => { setbuttonClick((prevState) => !prevState) }} isDisabled={buttonClick}>Compile</Button>
+                    <Button style={{ marginLeft: '75.8%', marginTop: '10px' }} onClick={() => { setbuttonClick((prevState) => !prevState) }} isDisabled={buttonClick}>Compile</Button>
 
                 </Box>
                 <Box>
