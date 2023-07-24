@@ -1,6 +1,10 @@
 'use client'
 import "../assets/Features.css"
-
+import TerminalIcon from '@mui/icons-material/Terminal';
+import FlashOnIcon from '@mui/icons-material/FlashOn';
+import WebhookIcon from '@mui/icons-material/Webhook';
+import ViewQuiltIcon from '@mui/icons-material/ViewQuilt';
+import AndroidIcon from '@mui/icons-material/Android';
 import {
   Box,
   Button,
@@ -24,7 +28,7 @@ import {
 
 const Card = ({ heading, description, icon, href }) => {
   return (
-    <Box
+    <Box id="box"
       maxW={{ base: 'full', md: '275px' }}
       w={'full'}
       borderWidth="1px"
@@ -39,18 +43,18 @@ const Card = ({ heading, description, icon, href }) => {
           justify={'center'}
           color={'white'}
           rounded={'full'}
+
+          id="icon"
           bg={useColorModeValue('gray.100', 'gray.700')}>
           {icon}
+          
         </Flex>
         <Box mt={2}>
-          <Heading size="md">{heading}</Heading>
-          <Text mt={1} fontSize={'sm'}>
+          <Heading size="md" id='heading__text'>{heading}</Heading>
+          <Text mt={1} fontSize={'sm'} id="card__text">
             {description}
           </Text>
         </Box>
-        <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-          Learn more
-        </Button>
       </Stack>
     </Box>
   )
@@ -70,33 +74,33 @@ export default function gridListWith() {
       <Container maxW={'5xl'} mt={12}>
         <Flex flexWrap="wrap" gridGap={6} justify="center">
           <Card
-            heading={'Heading'}
-            icon={<Icon as={FcAssistant} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            heading={'Language Support'}
+            description={`With over 70+ supported languages, you can code in your language of choice. From popular ones like Python, JavaScript, and C++, to more niche languages, this IDE has you covered.`}
+            href={'#'}
+            icon={<TerminalIcon style={{color:'red'}}/>}
+          />
+          <Card
+            heading={'MERN Efficiency'}
+            icon={<FlashOnIcon style={{color:'blue'}}/>}
+            description={`This IDE leverages the MERN stack's versatility to provide you with a smooth and efficient coding environment. Seamlessly code without worrying about compatibility issues.`}
+            href={'#'}
+          />
+          <Card
+            heading={'API Compilation'}
+            icon={<WebhookIcon  style={{color:'magenta'}}/>}
+            description={`Powerful API integration handles the heavy lifting for you. Compile and execute your code with just a click, saving you valuable time and effort`}
+            href={'#'}
+          />
+          <Card
+            heading={'UI'}
+            icon={<ViewQuiltIcon  style={{color:'purple'}}/>}
+            description={`Code on-the-go with our platform's responsive design.`}
             href={'#'}
           />
           <Card
             heading={'Heading'}
-            icon={<Icon as={FcCollaboration} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
-            href={'#'}
-          />
-          <Card
-            heading={'Heading'}
-            icon={<Icon as={FcDonate} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
-            href={'#'}
-          />
-          <Card
-            heading={'Heading'}
-            icon={<Icon as={FcManager} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
-            href={'#'}
-          />
-          <Card
-            heading={'Heading'}
-            icon={<Icon as={FcAbout} w={10} h={10} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            icon={<AndroidIcon  style={{color:'green'}}/>}
+            description={`Available in Android App and Web Version`}
             href={'#'}
           />
         </Flex>
