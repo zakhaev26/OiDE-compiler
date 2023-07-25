@@ -9,6 +9,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api',API)
 
-app.listen('5000',()=>{
-    console.log('Server live @127.0.0.1:5000')
+app.listen(process.env.PORT||3000,()=>{
+    console.log(`Server live ${process.env.PORT} OR 3000`)
 })
