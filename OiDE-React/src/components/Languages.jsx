@@ -1,13 +1,11 @@
 import React from 'react'
-import { Card, CardHeader, CardBody, CardFooter, Heading, Button, Text, SimpleGrid } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, Heading, Button, Text, SimpleGrid, transition } from '@chakra-ui/react'
 import "../assets/Languages.css"
 import lang from "../lang.map.js"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 const Languages = () => {
-  console.log(lang.language)
-
   return (
     <>
       <div id='lang-sup'>
@@ -32,10 +30,10 @@ const LangCard = ({ lang, i }) => {
       <CardHeader>
         <Heading size='sm'>{lang}</Heading>
       </CardHeader>
-      <CardFooter style={{backgroundColor:'azure'}}>
-      <Link to={`/code/${lang}`}>
-        <Button  >Code in {lang} !</Button>
-      </Link>
+      <CardFooter style={{ backgroundColor: 'azure' }}>
+        <Link to={`/code/${lang}`}>
+          <Button  >Code in {lang} !</Button>
+        </Link>
       </CardFooter>
     </Card>
   )

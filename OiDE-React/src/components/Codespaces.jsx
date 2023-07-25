@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Container, Textarea, Text, SimpleGrid, Box, Button } from '@chakra-ui/react'
 import axios from 'axios';
 import "../assets/Codespaces.css"
+
 const Codespaces = () => {
     const { lang } = useParams();
     let [value, setValue] = React.useState('')
@@ -52,7 +53,8 @@ const Codespaces = () => {
 
 
     return (
-        <div id='gon' style={{ width: '100%' }}>
+        <div id='gon' style={{ width: '100%' }}>  return (
+
             <h1 style={{ textAlign: 'center' }} className='gradient-text'>Welcome to {lang} IDE!</h1>
             <Text mb='8px'></Text>
             <SimpleGrid columns={2} spacing={10} height='100vh' style={{ scrollbarWidth: 'none', margin: '0' }}>

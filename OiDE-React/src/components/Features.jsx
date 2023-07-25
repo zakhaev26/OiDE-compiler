@@ -25,9 +25,9 @@ import {
   FcManager,
 } from 'react-icons/fc'
 
-
 const Card = ({ heading, description, icon, href }) => {
   return (
+
     <Box id="box"
       maxW={{ base: 'full', md: '275px' }}
       w={'full'}

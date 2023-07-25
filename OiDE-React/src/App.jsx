@@ -6,6 +6,7 @@ import Languages from './components/Languages';
 import Footer from "./components/Footer"
 import Codespaces from './components/Codespaces';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { motion } from 'framer-motion';
 function App() {
 
   // const compileCode = async (e) => {
@@ -27,6 +28,11 @@ function App() {
 
   return (
     <>
+    <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{delay:1}}
+    >
       <BrowserRouter>
         <Routes>
           <Route path='/' exact element={<SidebarAndHeader>
@@ -39,6 +45,7 @@ function App() {
           <Route path='*' element={<h1>Error 404</h1>}></Route>
         </Routes>
       </BrowserRouter>
+      </motion.div>
       {/* <center>
       <textarea value={code} onChange={(e) => { setCode(e.target.value); }} name="code" cols="30" rows="10" placeholder='Write Code Here' />
       <button type='submit' onClick={compileCode}>Compile</button>
