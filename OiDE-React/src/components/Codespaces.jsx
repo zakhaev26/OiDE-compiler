@@ -18,7 +18,7 @@ const Codespaces = () => {
 
         const fetchData = async () => {
             try {
-                const data = await axios.post('http://127.0.0.1:5000/api', {
+                const data = await axios.post('https://oide-node.onrender.com/api', {
                     code: value,
                     language:lang[0].toLowerCase() + lang.slice(1,lang.length)
                 })
