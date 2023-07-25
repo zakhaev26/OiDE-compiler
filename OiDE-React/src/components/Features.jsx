@@ -80,9 +80,9 @@ export default function gridListWith() {
             icon={<TerminalIcon style={{color:'red'}}/>}
           />
           <Card
-            heading={'MERN Efficiency'}
+            heading={'Efficiency'}
             icon={<FlashOnIcon style={{color:'blue'}}/>}
-            description={`This IDE leverages the MERN stack's versatility to provide you with a smooth and efficient coding environment. Seamlessly code without worrying about compatibility issues.`}
+            description={`This IDE leverages the Express.js , React.js and Node.js versatility to provide you with a smooth and efficient coding environment. Seamlessly code without worrying about compatibility issues.`}
             href={'#'}
           />
           <Card
