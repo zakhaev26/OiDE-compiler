@@ -2,15 +2,15 @@
 
 > This is a WebApp which can compile/Interpret 75+ Programming Languages.
 
-- App Snapshots
+- App Snaps
 
-![AppView1.PNG](./Snapshots/Appview1.jpg)
-![Appview2.PNG](./Snapshots/Appview2.jpg)
+![AppView1.PNG](./utils/Appview1.jpg)
+![Appview2.PNG](./utils/Appview2.jpg)
 
-- Desktop Snapshots
+- Desktop Snaps
 
-![Deskview1.PNG](./Snapshots/desktopv2.PNG)
-![Deskview1.PNG](./Snapshots/desktopv1.PNG)
+![Deskview1.PNG](./utils/desktopv2.PNG)
+![Deskview1.PNG](./utils/desktopv1.PNG)
 
 
 >The focus was on Backend logic so UI isn't appreciable (as of now)
