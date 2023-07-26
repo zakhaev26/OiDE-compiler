@@ -53,7 +53,7 @@ const Codespaces = () => {
 
 
     return (
-        <div id='gon' style={{ width: '100%' }}>  return (
+        <div id='gon' style={{ width: '100%' }}>
 
             <h1 style={{ textAlign: 'center' }} className='gradient-text'>Welcome to {lang} IDE!</h1>
             <Text mb='8px'></Text>
