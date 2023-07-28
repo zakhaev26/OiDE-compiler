@@ -31,3 +31,9 @@ h1{
     -webkit-text-fill-color: transparent;
     font-weight: 900;
 } */
+
+h6{
+    font-size: 1rem;
+    font-family: 'Manrope', cursive;
+    display: flex;
+}

@@ -7,15 +7,15 @@ import "../assets/Codespaces.css"
 const Codespaces = () => {
     const { lang } = useParams();
     let [value, setValue] = React.useState('')
-    let [OUTPUT__INJECTION__FROM__NODEJS,setOUTPUT__INJECTION__FROM__NODEJS] = useState("")
+    let [OUTPUT__INJECTION__FROM__NODEJS, setOUTPUT__INJECTION__FROM__NODEJS] = useState("")
     let handleInputChange = (e) => {
         let inputValue = e.target.value
         setValue(inputValue)
     }
-    let [id,setId] = useState(null)
-    let [version,setVersion] = useState(null)
-    let [versionName,setVersionName] = useState(null)
-    let [mem,setMem] = useState(null)
+    let [id, setId] = useState(null)
+    let [version, setVersion] = useState(null)
+    let [versionName, setVersionName] = useState(null)
+    let [mem, setMem] = useState(null)
 
     let [buttonClick, setbuttonClick] = useState(false)
     useEffect(() => {
@@ -24,7 +24,7 @@ const Codespaces = () => {
             try {
                 const data = await axios.post('https://oide-node.onrender.com/api', {
                     code: value,
-                    language:lang[0].toLowerCase() + lang.slice(1,lang.length)
+                    language: lang[0].toLowerCase() + lang.slice(1, lang.length)
                 })
                 return data
             }
@@ -42,11 +42,11 @@ const Codespaces = () => {
                 setVersion(null)
                 setVersionName(null)
                 setMem(null);
-                const {id,version,version_name} = res.data.language;
-                const {memory } = res.data;
-                res.data.output?(
-                setOUTPUT__INJECTION__FROM__NODEJS(res.data.output)):
-                setOUTPUT__INJECTION__FROM__NODEJS(res)
+                const { id, version, version_name } = res.data.language;
+                const { memory } = res.data;
+                res.data.output ? (
+                    setOUTPUT__INJECTION__FROM__NODEJS(res.data.output)) :
+                    setOUTPUT__INJECTION__FROM__NODEJS(res)
                 setId(id)
                 setVersion(version)
                 setVersionName(version_name)
@@ -65,9 +65,10 @@ const Codespaces = () => {
 
 
     return (
-        <div id='gon' style={{ width: '100%' }}>  return (
+        <div id='gon' style={{ width: '100%' }}>
 
             <h1 style={{ textAlign: 'center' }} className='gradient-text'>Welcome to {lang} IDE!</h1>
+
             <Text mb='8px'></Text>
             <SimpleGrid columns={2} spacing={10} height='100vh' style={{ scrollbarWidth: 'none', margin: '0' }}>
 
@@ -87,6 +88,7 @@ const Codespaces = () => {
 
                 </Box>
                 <Box>
+                    
                     <Textarea style={{ marginRight: '10px' }}
                         placeholder='Output'
                         size='lg'
@@ -96,12 +98,15 @@ const Codespaces = () => {
                         className='textarea'
                         value={OUTPUT__INJECTION__FROM__NODEJS}
                     />
+                    <div style={{ display: 'flex',color:'red',justifyContent:'space-evenly'}}>
+                        <h6>Memory : {mem}</h6>
+                        <h6>Version : {version}</h6>
+                        <h6>Version Name : {versionName}</h6>
+                        <h6>ID : {id}</h6>
+                    </div>
                 </Box>
             </SimpleGrid>
-            <h6>Memory : {mem}</h6>
-            <h6>Version : {version}</h6>
-            <h6>Version Name : {versionName}</h6>
-            <h6>ID : {id}</h6>
+
         </div>
     )
 }
