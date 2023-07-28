@@ -7,11 +7,15 @@ import "../assets/Codespaces.css"
 const Codespaces = () => {
     const { lang } = useParams();
     let [value, setValue] = React.useState('')
-    let [OUTPUT__INJECTION__FROM__NODEJS,setOUTPUT__INJECTION__FROM__NODEJS] = useState(null)
+    let [OUTPUT__INJECTION__FROM__NODEJS,setOUTPUT__INJECTION__FROM__NODEJS] = useState("")
     let handleInputChange = (e) => {
         let inputValue = e.target.value
         setValue(inputValue)
     }
+    let [id,setId] = useState(null)
+    let [version,setVersion] = useState(null)
+    let [versionName,setVersionName] = useState(null)
+    let [mem,setMem] = useState(null)
 
     let [buttonClick, setbuttonClick] = useState(false)
     useEffect(() => {
@@ -22,7 +26,6 @@ const Codespaces = () => {
                     code: value,
                     language:lang[0].toLowerCase() + lang.slice(1,lang.length)
                 })
-                console.log(data + "data from fetchData")
                 return data
             }
             catch (e) {
@@ -35,10 +38,19 @@ const Codespaces = () => {
         if (buttonClick === true) {
             console.log('Compiling..')
             fetchData().then((res) => {
-                res.data.output?
-                setOUTPUT__INJECTION__FROM__NODEJS(res.data.output):
+                setId(null)
+                setVersion(null)
+                setVersionName(null)
+                setMem(null);
+                const {id,version,version_name} = res.data.language;
+                const {memory } = res.data;
+                res.data.output?(
+                setOUTPUT__INJECTION__FROM__NODEJS(res.data.output)):
                 setOUTPUT__INJECTION__FROM__NODEJS(res)
-
+                setId(id)
+                setVersion(version)
+                setVersionName(version_name)
+                setMem(memory);
             }).catch(e => {
                 console.log(e.message)
                 setOUTPUT__INJECTION__FROM__NODEJS(e.message)
@@ -76,7 +88,6 @@ const Codespaces = () => {
                 </Box>
                 <Box>
                     <Textarea style={{ marginRight: '10px' }}
-                        onChange={handleInputChange}
                         placeholder='Output'
                         size='lg'
                         width='90%'
@@ -85,9 +96,12 @@ const Codespaces = () => {
                         className='textarea'
                         value={OUTPUT__INJECTION__FROM__NODEJS}
                     />
-
                 </Box>
             </SimpleGrid>
+            <h6>Memory : {mem}</h6>
+            <h6>Version : {version}</h6>
+            <h6>Version Name : {versionName}</h6>
+            <h6>ID : {id}</h6>
         </div>
     )
 }

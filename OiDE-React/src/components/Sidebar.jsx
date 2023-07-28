@@ -41,8 +41,8 @@ export default function SidebarAndHeader({
 }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
-      <SidebarContent
+    <Box  minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
+      <SidebarContent 
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
       />
@@ -70,7 +70,7 @@ export default function SidebarAndHeader({
 
 const SidebarContent = ({ onClose, ...rest }) => {
   return (
-    <Box
+    <Box 
       transition="3s ease"
       bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
