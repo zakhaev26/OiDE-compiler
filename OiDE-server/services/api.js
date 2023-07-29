@@ -6,6 +6,8 @@
 const axios = require('axios');
 async function api (req,res){
     const {code,language} = req.body;
+    //for testing in api server
+    console.log(code,language);
     const options = {
         method: 'POST',
         url: process.env.API_URL,

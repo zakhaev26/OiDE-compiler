@@ -1,35 +1,78 @@
-# Online Compiler and IDE
+<h1 align="center" id="title">OiDE-Online IDE/Code Compiler</h1>
 
-> This is a WebApp which can compile/Interpret 75+ Programming Languages.
+<p align="center"><img src="https://socialify.git.ci/mogulcoder26/OiDE-compiler/image?description=1&amp;descriptionEditable=Webapp%20which%20can%20compile%2FInterpret%2075%2B%20Programming%20Languages.&amp;font=KoHo&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Floating%20Cogs&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
 
-- App Snaps
+<p id="description" style='text-align:center'>This is an Online IDE/Code Compiler Web Application that provides a comprehensive solution for coding enthusiasts enabling them to write compile and execute code in up to 77 programming languages. From Go and Rust to Scala C/C++ and many more this application offers a versatile coding environment to cater to diverse coding needs.</p>
 
-![AppView1.PNG](./utils/Appview1.jpg)
-![Appview2.PNG](./utils/Appview2.jpg)
+<p align="center"><img src="https://img.shields.io/github/commit-activity/t/mogulcoder26/OiDE-compiler" alt="shields"><img src="https://img.shields.io/github/repo-size/mogulcoder26/OiDE-compiler" alt="shields"><img src="https://img.shields.io/github/license/mogulcoder26/OiDE-compiler" alt="shields"></p>
 
-- Desktop Snaps
+<h2>Project Screenshots:</h2>
 
-![Deskview1.PNG](./utils/desktopv2.PNG)
-![Deskview1.PNG](./utils/desktopv1.PNG)
+<img src="https://i.ibb.co/xDtBcFy/OiDE.png" alt="project-screenshot" width="100%">
 
+  
+  
+<h2>🧐 Features</h2>
 
->The focus was on Backend logic so UI isn't appreciable (as of now)
-- Also I've no life and I'm bored so there are languages which nobody uses,but go on to explore new stuff ;)
+Here're some of the project's best features:
 
-> To run the app on Local machine:
-# Install Dependencies:
- ```
-    cd <filename> 
-    npm i 
-  ```
+*   Support for 77 programming languages
+*   Robust code compilation and execution capabilities.
+*   User-friendly interface powered by React.js and enhanced with ChakraUI and MaterialUI.
+*   Seamless communication between the client and server using APIs.
+*   Easy accessibility on Android devices through the Android pack
+*   Alternate flavor allowing code processing on the server itself minimizing external dependencies.
 
-# Run App:
-- Via the command `node app.js`
+<h2>🛠️ Installation Steps:</h2>
 
-## Get Started>Choose IDE>Code>See Output
+<p>1. Clone the repository:</p>
 
-# Tech Stack:
-Node.js,Express.js,EJS,REST API's From RapidAPI,TailwindCSS,Flowbite
+```
+https://github.com/mogulcoder26/OiDE-compiler.git
+```
 
-# Future Work?
-- Creating a good UI , Optimize Speed , Using Shell scripts to run code on VM and se result without APIs
+<p>2. Install the required dependencies for the client-side and server-side using npm or yarn.</p>
+
+```
+npm install
+```
+
+```
+yarn add
+```
+
+<p>4. Run the development server for client using</p>
+
+```
+npm run dev
+```
+
+<p>5. Run the development server for serverside using</p>
+
+```
+node app
+```
+
+<p>6. Access the application through your preferred web browser or try the Android pack on your Android device.</p>
+
+<h2>🍰 Contribution Guidelines:</h2>
+
+Contributions from the open-source community are welcomed to make this project even better!
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   React.js
+*   Express.js
+*   Node.js
+*   CompilerAPI
+*   Bash
+*   ChakraUI
+*   MUI
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the MIT
